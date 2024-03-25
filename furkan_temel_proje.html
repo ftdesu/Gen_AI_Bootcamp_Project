@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Birds Showcase</title>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+  body {
+    font-family: 'Open+Sans', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .explanation, .gallery, .how-its-made, .artist-note {
+    padding: 15px;
+  }
+  .item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .item img {
+    width: 100%;
+    height: 100%; /* Adjusted for square images */
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Ensures the images are square */
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller images */
+    gap: 15px;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Adjusted for larger images */
+  }
+  .modal-content img {
+    width: 100%;
+    height: auto;
+  }
+  .modal-caption {
+    padding: 10px;
+    text-align: center;
+  }
+  .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AI Birds Showcase</h1>
+</header>
+
+<main>
+  <!-- Explanation of Goal -->
+  <section class="explanation">
+    <p>This gallery showcases the fascinating capabilities of AI in generating bird imagery, highlighting the intricate details and vibrant colors that these creatures possess...</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+      <!-- Mallard Duck -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/6311d3f2-8025-4485-9a6a-6be78b3a8688/Default_a_mallard_duck_in_its_habitat_artstation_1.jpg" alt="AI-Generated Mallard Duck">
+      <div class="description">
+        <h2>Mallard Duck</h2>
+        <p>The Mallard is a dabbling duck that breeds throughout the temperate and subtropical Americas, Europe, Asia, and North Africa.</p>
+      </div>
+    </article>
+    <!-- Woodpecker -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/52514d37-5250-4f0e-9646-10e6aa5af9dc/Default_a_woodpecker_in_its_habitat_artstation_0.jpg" alt="AI-Generated Woodpecker">
+      <div class="description">
+        <h2>Woodpecker</h2>
+        <p>Woodpeckers are part of the family Picidae and are known for their strong beaks used for drilling into wood to find insects.</p>
+      </div>
+    </article>
+    <!-- Blue Jay -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/89c082fa-2d9c-43bc-89f9-7f7385b3f6e2/Default_a_blue_jay_in_its_habitat_artstation_1.jpg" alt="AI-Generated Blue Jay">
+      <div class="description">
+        <h2>Blue Jay</h2>
+        <p>The Blue Jay is a vibrant bird with blue, white, and black plumage and a loud, jay! call, often seen in forests and backyards.</p>
+      </div>
+    </article>
+    <!-- Penguin -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/3b6786c9-423f-4643-92f5-0260ed0a8dd2/Default_a_penguin_in_its_habitat_artstation_1.jpg" alt="AI-Generated Penguin">
+      <div class="description">
+        <h2>Penguin</h2>
+        <p>Penguins are flightless seabirds with a distinct tuxedo-like appearance, living primarily in the Southern Hemisphere.</p>
+      </div>
+    </article>
+    <!-- Northern Cardinal -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/5b607ed8-12b9-437c-97b3-5dd1a4976e26/Default_a_northern_cardinal_in_its_habitat_artstation_1.jpg" alt="AI-Generated Northern Cardinal">
+      <div class="description">
+        <h2>Northern Cardinal</h2>
+        <p>The Northern Cardinal is a perennial favorite with its vibrant red plumage and sweet song, often found in woodlands and gardens.</p>
+      </div>
+    </article>
+    <!-- Hummingbird -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/f5acd40a-2fd7-4693-bb36-527a56b2124f/Default_a_humming_bird_in_its_habitat_artstation_1.jpg" alt="AI-Generated Hummingbird">
+      <div class="description">
+        <h2>Hummingbird</h2>
+        <p>Hummingbirds are known for their incredible flight skills and are the only birds that can fly backwards, often seen hovering around flowers.</p>
+      </div>
+    </article>
+    <!-- Bald Eagle -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/d96547fd-6225-4aa2-b3ba-ba78950d865c/Default_a_bald_eagle_in_its_habitat_artstation_3.jpg" alt="AI-Generated Bald Eagle">
+      <div class="description">
+        <h2>Bald Eagle</h2>
+        <p>The Bald Eagle, America's national bird, is a symbol of strength and freedom, often found near large bodies of open water.</p>
+      </div>
+    </article>
+    <!-- American Robin -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/fdfffa67-13bc-4bd2-9ba2-d1c154da4286/Default_an_american_robin_in_its_habitat_artstation_3.jpg" alt="AI-Generated American Robin">
+      <div class="description">
+        <h2>American Robin</h2>
+        <p>The American Robin is a migratory songbird with a cheerful song, known for its orange breast and early appearance at the end of winter.</p>
+      </div>
+    </article>
+    <!-- Budgie -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/f856a5aa-02f7-4a44-a0a5-5747337ef43a/Default_a_budgie_standing_on_a_wood_branch_art_station_2.jpg" alt="AI-Generated Budgie">
+      <div class="description">
+        <h2>Budgie</h2>
+        <p>Budgies are small, social parakeets with a variety of colorful plumage, popular as pets for their playful nature and ability to mimic speech.</p>
+      </div>
+    </article>
+    <!-- Cockatiel -->
+    <article class="item">
+      <img src="https://cdn.leonardo.ai/users/887963b5-5219-4918-b7f4-5c2d71e4b131/generations/dd246192-4269-4476-8ca0-6b2c6c754b86/Default_a_cockatiel_standing_on_a_wood_branch_art_station_0.jpg" alt="AI-Generated Cockatiel">
+      <div class="description">
+        <h2>Cockatiel</h2>
+        <p>The Cockatiel is a crested parrot known for its distinctive head feathers and whistling abilities, often found in arid regions of Australia.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- How It's Made -->
+  <section class="how-its-made">
+    <h2>How It's Made</h2>
+    <p>The images in this gallery are created using advanced AI algorithms that analyze thousands of bird photographs to generate new, original artworks...</p>
+  </section>
+
+  <!-- Artist's Note -->
+  <section class="artist-note">
+    <h2>Artist's Note</h2>
+    <p>As the creator of this gallery, I am thrilled to present a collection that merges my passion for avian life with the boundless possibilities of AI...</p>
+  </section>
+</main>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <img id="img01">
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption" class="modal-caption"></div>
+  </div>
+</div>
+
+<footer>
+  <p>Design by Creative Wings</p>
+</footer>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var galleryItems = document.querySelectorAll('.gallery .item');
+
+galleryItems.forEach(function(item) {
+  item.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.querySelector('img').src;
+    captionText.innerHTML = this.querySelector('.description').innerHTML;
+  }
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
